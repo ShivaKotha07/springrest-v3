@@ -1,0 +1,76 @@
+<div class="container-fluid" style="background-color:powderblue">
+  <h3 style="text-align: center;color: black">Sign up</h3>
+  
+  </div>
+  <div class="container-fluid">
+ 
+          <form (ngSubmit)="onSubmit(userId.value)" #userForm="ngForm">
+              <div class="form-group">
+                  <label for="acc_no">Account No :<img src=".\assets\account.png" class="rounded" alt="Cinque Terre" width="30" height="30"> </label>
+                  <input type="text" [(ngModel)]="user.acc_no" 
+                    class="form-control" id="acc_no" name="acc_no" placeholder="Enter account no"
+                    required pattern="[a-zA-Z0-9]{7}" #acc_no="ngModel">
+                </div>
+            <div [hidden]="!acc_no.pristine" class="alert alert-danger">Account No is required</div>
+            <div *ngIf="!acc_no.valid && acc_no.touched " class="alert alert-danger">Account No length should be 7</div>
+            
+            <div class="form-group">
+              <label for="user_name">Name :<img src=".\assets\name.png" class="rounded" alt="Cinque Terre" width="30" height="30">  </label>
+              <input type="text" [(ngModel)]="user.user_name" 
+                class="form-control" id="user_name" name="user_name" placeholder="Enter your name"
+                required pattern="[A-Z a-z]+" #user_name="ngModel">
+            </div>
+            <div [hidden]="!user_name.pristine" class="alert alert-danger">Name is required</div>
+            <div *ngIf="!user_name.valid && user_name.touched " class="alert alert-danger">username must be characters only</div>
+          
+
+            <div class="form-group">
+                <label for="userId">UserId :<img src=".\assets\id.png" class="rounded" alt="Cinque Terre" width="30" height="30">  </label>
+                <input type="text" [(ngModel)]="user.userId" 
+                  class="form-control" id="userId" name="userId" placeholder="Enter userId"
+                  required pattern="[a-zA-Z0-9]{8}" #userId="ngModel">
+            </div>
+            <div [hidden]="!userId.pristine" class="alert alert-danger">userId is required</div>
+            <div *ngIf="!userId.valid && userId.touched " class="alert alert-danger">UserId length should be 8</div>
+
+            <div class="form-group">
+                <label for="password">Password :<img src=".\assets\password.jpg" class="rounded" alt="Cinque Terre" width="20" height="20">   </label>
+                <input type="password" [(ngModel)]="user.password" 
+                  class="form-control" id="password" name="password" placeholder="Enter password"
+                  required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@]).{8,12}$" #password="ngModel">
+            </div>
+            <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
+            <div *ngIf="!password.valid && password.touched " class="alert alert-danger">Password should contain<br>1. At least one lower case letter<br>2. At least one upper case letter<br>3. At least one digit<br>4. At least one special character<br>5. Password length should be 8 to 12</div>
+            
+            <div class="form-group">
+              <label for="cpassword">Confirm Password :<img src=".\assets\password.jpg" class="rounded" alt="Cinque Terre" width="20" height="20">   </label>
+              <input type="password" [(ngModel)]="user.password" 
+                class="form-control" id="cpassword" name="cpassword" placeholder="Re-enter password"
+                required #cpassword="ngModel">
+          </div>
+          <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>          
+
+            <div class="form-group">
+                <label for="mob_no">Mobile No :<img src=".\assets\phone.jpg" class="rounded" alt="Cinque Terre" width="20" height="20">    </label>
+                <input type="number" [(ngModel)]="user.mob_no" 
+                  class="form-control" id="mob_no" name="mob_no" placeholder="Enter mobile no"
+                  required pattern="(0/91)?[7-9][0-9]{9}" #mob_no="ngModel">
+            </div>
+            <div [hidden]="!mob_no.pristine" class="alert alert-danger">Mob_no is required</div>
+            <div *ngIf="!mob_no.valid && mob_no.touched " class="alert alert-danger">Please enter valid Mobile number</div>
+
+            <div class="form-group">
+                <label for="balance">Balance :<img src=".\assets\balance.jpg" class="rounded" alt="Cinque Terre" width="20" height="20">     </label>
+                <input type="number" [(ngModel)]="user.balance" onkeypress="return (event.charCode>= 48)"
+                  class="form-control" id="balance" name="balance" placeholder="Enter balance"
+                  required pattern="^[1-9][0-9]*$" #balance="ngModel">
+            </div>
+            <div [hidden]="!balance.pristine" class="alert alert-danger">Balance is required</div>
+            <div *ngIf="!balance.valid && balance.touched " class="alert alert-danger">Balance should be greater than zero</div>
+           
+            <div align="center">
+            <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+          </div> 
+          </form>
+          </div>
+        

@@ -1,0 +1,29 @@
+<div class="container-fluid" style="background-color:powderblue">
+<h3 style="text-align: center;color: black">Welcome to Paytm Login</h3>
+</div>
+<div class="container-fluid">
+        <form (ngSubmit)="onLogin(userId.value,password.value)" #loginForm="ngForm">
+            <div class="form-group">
+               <label for="username">UserId- <img src=".\assets\userid.jpg" class="rounded" alt="Cinque Terre" width="20" height="20">  : </label>    
+               <input type="text" [(ngModel)]="user.userId" 
+                      class="form-control" id="userId" name="userId" placeholder="Enter username"
+                      required #userId="ngModel">  
+            </div>
+            <div [hidden]="!userId.pristine" class="alert alert-danger">UserId is required</div>
+
+       
+            <div class="form-group">
+                  <label for="password">Password-<img src=".\assets\password.jpg" class="rounded" alt="Cinque Terre" width="20" height="20">  :  </label> 
+                  <input type="password" [(ngModel)]="user.password" 
+                           class="form-control" id="password" name="password" placeholder="Enter password"
+                           required #password="ngModel">
+                 </div>
+            <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
+
+            <div align="center">
+            <input type="submit" [disabled]="!loginForm.form.valid" value="Submit" class="btn btn-info">
+            <button type="submit" class="btn btn-danger" (click)="register()"> Sign Up</button>
+            </div>
+        </form>
+    </div>
+   

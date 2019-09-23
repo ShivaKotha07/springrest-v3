@@ -1,0 +1,38 @@
+<div class="container-fluid" style="background-color:powderblue">
+    <h3 style="text-align: center;color: black">deposit</h3>
+    </div>
+    
+    <div class="table-responsive">
+            <div class="card-body">
+    <img src=".\assets\deposit.gif" class="rounded" alt="Cinque Terre" width="980" height="300"> 
+            </div>
+    </div>
+<form (ngSubmit)="onSubmit(amount.value)" #depositForm="ngForm">
+ 
+    <div class="form-group"> 
+      
+        <label for="amount">Enter Amount : </label>
+        <input type="number" [(ngModel)]="user.amount" class="form-control" onkeypress="return (event.charCode>= 48)"
+         id="amount" name="amount" placeholder="Enter amount"
+          required pattern="^[1-9][0-9]*$" #amount="ngModel">
+
+        </div>
+        <div [hidden]="!amount.pristine" class="alert alert-danger">Amount is required</div>
+        <div *ngIf="!amount.valid && amount.touched " class="alert alert-danger">Amount should be greater than zero</div>
+       
+        <div  align="center"><input type="submit" [disabled]="!depositForm.form.valid" class="btn btn-info" value="Deposit">
+        </div>
+
+        <div *ngIf="amount1!=null"><br><hr>
+            <h5 align="center">Current Balance is : {{amount1}}</h5>
+            <hr>
+        </div>
+
+        <br><br>
+        <div align="center">
+            <input type="submit" class="btn btn-info" value="Menu" (click)="homepage()">
+        </div>
+</form>
+
+
+

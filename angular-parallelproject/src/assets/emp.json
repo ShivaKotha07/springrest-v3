@@ -1,0 +1,32 @@
+[
+    {
+        "empId":1001,
+        "empName" : "Snehal",
+        "empSalary" : 76661.1,
+        "empDept" : "Java"
+    },
+    {
+        "empId":1002,
+        "empName" : "Ruchita",
+        "empSalary" : 82000,
+        "empDept" : "Account"
+    },
+    {
+        "empId":1003,
+        "empName" : "SVC",
+        "empSalary" : 60000,
+        "empDept" : "Python"
+    },
+    {
+        "empId":1004,
+        "empName" : "VNK",
+        "empSalary" : 61766.1,
+        "empDept" : "DotNet"
+    },
+    {
+        "empId":1005,
+        "empName" : "Sheetal",
+        "empSalary" : 56000,
+        "empDept" : "Testing"
+    }
+]

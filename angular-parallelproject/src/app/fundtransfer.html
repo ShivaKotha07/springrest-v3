@@ -1,0 +1,47 @@
+<div class="container-fluid" style="background-color:powderblue">
+    <h3 style="text-align: center;color: black">fund transfer</h3>
+    </div>
+    <br>
+    <div class="table-responsive">
+            <div class="card-body">
+    <img src=".\assets\transfer2.gif" class="rounded" alt="Cinque Terre" width="980" height="300"> 
+            </div>
+    </div>
+
+<form (ngSubmit)="onSubmit(userid.value,amount.value)" #fundtransferForm="ngForm">
+   
+    <div class="form-group">   
+    
+  <label for="userid"> Enter UserId to Transfer : </label>
+ <input type="text" [(ngModel)]="user.userid" class="form-control"
+         id="userid" name="userid" placeholder="Enter userid"
+          required #userid="ngModel">
+    </div>
+
+   <div [hidden]="!userid.pristine" class="alert alert-danger">Userid is required</div>
+  
+    
+    
+    <div class="form-group">
+        <label for="amount">Amount : </label>
+        <input type="number" [(ngModel)]="user.amount" class="form-control" onkeypress="return (event.charCode>= 48)"
+             id="amount" name="amount" placeholder="Enter amount"
+              required pattern="^[1-9][0-9]*$" #amount="ngModel">
+         
+    </div>
+            <div [hidden]="!amount.pristine" class="alert alert-danger">Amount is required</div>
+            <div *ngIf="!amount.valid && amount.touched " class="alert alert-danger">Amount should be greater than zero</div>
+        
+            <div align="center"><input type="submit" [disabled]="!fundtransferForm.form.valid" class="btn btn-info" value="Fund Transfer">
+            </div>
+
+            <div *ngIf="amount1!=null"><br><hr>
+                <h5 align="center">Current Balance is : {{amount1}}</h5>
+                <hr>
+        </div>
+
+    <br><br>
+    <div align="center">
+        <input type="submit" class="btn btn-info" value="Menu" (click)="homepage()">
+    </div>
+</form>

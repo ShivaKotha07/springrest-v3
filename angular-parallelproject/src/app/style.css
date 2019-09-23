@@ -1,0 +1,22 @@
+h3{
+    text-align: center;
+    color: brown
+}
+
+.container{
+    /* font-size: 20;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-shadow: 1px 2px lightcoral; */
+
+    width:400px; 
+    margin:0 auto;
+    border: solid thin black;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px; 
+    padding-left: 20px; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+

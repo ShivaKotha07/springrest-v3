@@ -1,0 +1,24 @@
+<div class="container-fluid" style="background-color:powderblue">
+    <h3 style="text-align: center;color: black">Balance</h3>
+    </div>
+    <div class="table-responsive">
+            <div class="card-body">
+    <img src=".\assets\balance1.gif" class="rounded" alt="Cinque Terre" width="980" height="400"> 
+            </div>
+    </div>
+    <br>
+<div class="container-fluid">
+<form (ngSubmit)="showbalance()" align="center">
+
+    <input type="submit" class="btn btn-info" value="Check Balance">
+
+    <div *ngIf="balance!=null"><br><hr>
+        <h5 align="center">Your balance is : {{balance}}</h5>
+        <hr>
+    </div>
+    <br><br>
+    <input type="submit" class="btn btn-info" value="Menu" (click)="homepage()">
+</form>
+</div>
+
+
